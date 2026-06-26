@@ -44,3 +44,38 @@ function updateTimerInterface({ days, hours, minutes, seconds }){
   minutesEl.textContent = addLeadingZero(minutes);
   secondEl.textContent = addLeadingZero(seconds);
 }
+
+startBtn.addEventListener('click', () => {
+startBtn.disabled = true;
+input.disabled = true;
+let timerId = null;
+
+timerId = setInterval(()=>{
+  const msLeft = userSelectedDate - new Date();
+
+  if (msLeft <=0){
+    clearInterval(timerId);
+    updateTimerInterface({ days : 0, hours: 0, minutes: 0, seconds: 0});
+    input.disablet = false;
+    return;
+  }
+  const timeData = convertMs(msLeft);
+  updateTimerInterface(timeData);
+}, 1000);
+});
+
+function convertMs(ms) {
+
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+
+
+const days = Math.floor(ms / day);
+const hours = Math.floor((ms % day) / hour);
+const minutes = Math.floor(((ms % day) % hour) / minute);
+const seconds = Math.floor((((ms % day) % hour) / minute) / second);
+
+return { days, hours, minutes, seconds };
+}
