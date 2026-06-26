@@ -4,13 +4,13 @@
   | default @import url()
   |============================
 */
-/* Common styles */
+
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./container.css');
 @import url('./animations.css');
 
-/* Sections style */
+
 @import url('./header.css');
 @import url('./vite-promo.css');
 @import url('./badges.css');
@@ -18,7 +18,7 @@
 @import url('./footer.css');
 
 
-/* Загальні стилі для сторінки (можна налаштувати під себе) */
+
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background-color: #fafafa;
@@ -26,11 +26,11 @@ body {
   padding: 40px;
 }
 
-/* 1. Стилізуємо блок з інпутом та кнопкою */
+
 .picker-wrapper {
   display: flex;
-  gap: 12px; /* Відступ між інпутом і кнопкою */
-  margin-bottom: 32px; /* Відступ вниз до таймера */
+  gap: 12px; 
+  margin-bottom: 32px; 
 }
 
 #datetime-picker {
@@ -42,7 +42,7 @@ body {
   width: 250px;
 }
 
-/* Стиль кнопки Start */
+
 button[data-start] {
   font-size: 18px;
   padding: 8px 24px;
@@ -54,33 +54,33 @@ button[data-start] {
   transition: all 0.2s ease;
 }
 
-/* Коли кнопка активна (доступна для кліку) */
+
 button[data-start]:not(:disabled) {
   background-color: #4e75ff;
   color: white;
   border-color: #3b62e3;
 }
 
-/* Зміна курсору, якщо кнопка заблокована */
+
 button[data-start]:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
 
-/* 2. Стилізуємо сам таймер */
+
 .timer {
   display: flex;
-  gap: 24px; /* Відступи між блоками Days, Hours тощо */
+  gap: 24px; 
 }
 
-/* Кожна колонка (цифра + підпис) */
+
 .field {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Центруємо текст всередині колонки */
+  align-items: center; 
 }
 
-/* Великі цифри */
+
 .value {
   font-size: 48px;
   font-weight: 500;
@@ -88,10 +88,11 @@ button[data-start]:disabled {
   margin-bottom: 4px;
 }
 
-/* Маленькі підписи знизу (DAYS, HOURS...) */
+
 .label {
   font-size: 12px;
-  text-transform: uppercase; /* Робимо літери великими */
+  text-transform: uppercase; 
   color: #2e2e2e;
   font-weight: 400;
 }
+
